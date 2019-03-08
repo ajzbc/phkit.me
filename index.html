@@ -17,15 +17,7 @@
 
         <nav class="nav">
             <div class="nav-left">
-                <a class="brand" href="#"><span class="text-ph">PH</span>KIT</a>
-            </div>
-            <div class="nav-right">
-                <!-- todo download these svgs -->
-                <!-- center buttons on mobile-->
-                <a><img src="https://icongr.am/fontawesome/github-alt.svg?size=24&color=4078c0">&nbsp;<span id="phkitStars"
-                        class="social-stat"></span></a>
-                <a class="no-right-padding"><img src="https://icongr.am/fontawesome/product-hunt.svg?size=24&color=DA552E">&nbsp;<span
-                        id="phkitUpvotes" class="social-stat"></span></a>
+                <a class="brand" href="https://phkit.me"><span class="text-ph">PH</span>KIT</a>
             </div>
         </nav>
 
@@ -37,8 +29,9 @@
             <div class="row">
                 <div class="col-9">
                     <form id="inputPostURL">
-                        <input type="url" name="" id="postURL" value="https://www.producthunt.com/posts/kanye-rest-2"
-                            placeholder="https://www.producthunt.com/posts/kanye-rest-2" autocomplete="off" autofocus>
+                        <input type="url" name="" id="postURL" placeholder="https://www.producthunt.com/posts/slack"
+                            autocomplete="
+                            off" autofocus>
                     </form>
                 </div>
                 <div class="col-3">
@@ -67,7 +60,30 @@
         <div class="section is-hidden" id="sectionBadge">
             <h3 class="is-vertical-align"><i class="em-svg em-shield svg-too-big"></i> &nbsp; Premade badges<span class="hide-phone">&nbsp;with</span><a
                     class="text-blue">&nbsp;shields.io</a></h3>
-            <img id="defaultBadge">
+            <img id="socialBadge">
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" name="" id="socialBadgeInput" value="" onClick="this.setSelectionRange(0, this.value.length)"
+                        readonly>
+                </div>
+                <div class="col-1 hide-phone">
+                    <a onclick='copy("socialBadgeInput")'><img src="https://icongr.am/octicons/clippy.svg"></a>
+                </div>
+            </div>
+            <img id="githubBadge">
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" name="" id="githubBadgeInput" value="" onClick="this.setSelectionRange(0, this.value.length)"
+                        readonly>
+                </div>
+                <div class="col-1 hide-phone">
+                    <a onclick='copy("githubBadgeInput")'><img src="https://icongr.am/octicons/clippy.svg"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <p class="temp">(WIP) More features will be added after basic usage testing</p>
         </div>
 
     </div>

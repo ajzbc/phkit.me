@@ -36,8 +36,17 @@
                     var result = document.getElementById("getResult");
                     result.textContent = votesResp.votes;
 
-                    var defaultBadge = document.getElementById("defaultBadge");
-                    defaultBadge.src = `https://img.shields.io/badge/dynamic/json.svg?label=Upvotes&query=%24.votes&url=https%3A%2F%2Fapi.phkit.me%2Fvotes%2F${id}&logo=product-hunt&&logoColor=fff&color=DA552E`
+                    var githubBadge = document.getElementById("githubBadge");
+                    githubBadge.src = `https://img.shields.io/badge/Upvotes-${votesResp.votes}-DA552E.svg?logo=product-hunt&logoColor=fff&color=DA552E`
+
+                    var githubBadgeInput = document.getElementById("githubBadgeInput");
+                    githubBadgeInput.value = `https://img.shields.io/badge/dynamic/json.svg?label=Upvotes&query=%24.votes&url=https%3A%2F%2Fapi.phkit.me%2Fvotes%2F${id}&logo=product-hunt&&logoColor=fff&color=DA552E&`
+
+                    var socialBadge = document.getElementById("socialBadge");
+                    socialBadge.src = `https://img.shields.io/badge/Upvotes-${votesResp.votes}-DA552E.svg?logo=product-hunt&logoColor=DA552E&style=social`
+
+                    var socialBadgeInput = document.getElementById("socialBadgeInput");
+                    socialBadgeInput.value = `https://img.shields.io/badge/dynamic/json.svg?label=Upvotes&query=%24.votes&url=https%3A%2F%2Fapi.phkit.me%2Fvotes%2F${id}&logo=product-hunt&logoColor=DA552E&style=social`
                 }
             } else {
                 alert("Please enter a valid post url");
@@ -65,11 +74,11 @@
         return response.stargazers_count;
     }
 
-    var phkitUpvotes = await getVotes("146467");
-    document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
+    // var phkitUpvotes = await getVotes("146467");
+    // document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
 
-    var phkitStars = await getStars();
-    document.getElementById("phkitStars").innerHTML = phkitStars;
+    // var phkitStars = await getStars();
+    // document.getElementById("phkitStars").innerHTML = phkitStars;
 
 })();
 
