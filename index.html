@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PHKIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/chota.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav class="nav">
+            <div class="nav-left">
+                <a class="brand" href="#"><span class="text-ph">PH</span>KIT</a>
+            </div>
+            <div class="nav-right">
+                <!-- todo download these svgs -->
+                <!-- center buttons on mobile-->
+                <a><img src="https://icongr.am/fontawesome/github-alt.svg?size=24&color=4078c0">&nbsp;<span id="phkitStars"
+                        class="social-stat"></span></a>
+                <a class="no-right-padding"><img src="https://icongr.am/fontawesome/product-hunt.svg?size=24&color=DA552E">&nbsp;<span
+                        id="phkitUpvotes" class="social-stat"></span></a>
+            </div>
+        </nav>
+
+        <!-- TODO CHANGE SPACING -->
+        <p class="text-grey">a simple (unofficial) upvote count api for product hunt</p>
+
+        <div class="section">
+            <h3 class="is-vertical-align"><i class="em-svg em-one svg-too-big"></i> &nbsp; Enter Product Hunt Post URL</h3>
+            <div class="row">
+                <div class="col-9">
+                    <form id="inputPostURL">
+                        <input type="url" name="" id="postURL" value="https://www.producthunt.com/posts/kanye-rest-2"
+                            placeholder="https://www.producthunt.com/posts/kanye-rest-2" autocomplete="off" autofocus>
+                    </form>
+                </div>
+                <div class="col-3">
+                    <a class="button ph is-full-width" id="generateButton">Generate</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section is-hidden" id="sectionURL">
+            <h3 class="is-vertical-align"><i class="em-svg em-two svg-too-big"></i> &nbsp; Retrieve post vote count</h3>
+            <div class="row">
+                <div class="col-11">
+                    <input type="text" name="" id="outputURL" value="https://api.phkit.me/votes/{post_id}" onClick="this.setSelectionRange(0, this.value.length)"
+                        readonly>
+                </div>
+                <div class="col-1 hide-phone">
+                    <a onclick='copy("outputURL")'><img src="https://icongr.am/octicons/clippy.svg"></a>
+                </div>
+            </div>
+            <pre>{
+    <span id="getName">votes: </span><span id="getResult" class="text-ph">{votes}</span>
+}
+</pre>
+        </div>
+
+        <div class="section is-hidden" id="sectionBadge">
+            <h3 class="is-vertical-align"><i class="em-svg em-shield svg-too-big"></i> &nbsp; Premade badges<span class="hide-phone">&nbsp;with</span><a
+                    class="text-blue">&nbsp;shields.io</a></h3>
+            <img id="defaultBadge">
+        </div>
+
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
