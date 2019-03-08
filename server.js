@@ -35,11 +35,13 @@ app.get('/votes/:post_id([0-9]+)', function (req, res) {
                 votes: tspan
             });
             incrementAPICalls(post_id);
+            return;
         } else {
             res.status(404).json({
                 error: "404"
             });
             incrementAPICalls();
+            return;
         }
     });
 });
@@ -53,10 +55,12 @@ app.get('/getPostID/:name([A-Za-z0-9\-]+)', function (req, res) {
                 error: "404"
             });
             incrementAPICalls();
+            return;
         }
         var post_id = imgsrc.match(/\=(.*?)\&/)[1];
         res.send(post_id);
         incrementAPICalls();
+        return;
     });
 });
 
