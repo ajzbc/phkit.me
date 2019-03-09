@@ -17,13 +17,21 @@ html {
     font-weight: 700;
 }
 
-.em,
-.em-svg {
-    height: 2.4rem;
-    width: 2.4rem;
+.left-stat {
+    margin-right: 1rem;
 }
 
-.temp {
-    margin-top: 25px;
-    margin-bottom: 0px;
+.right-stat {
+    margin-left: 1rem;
+}
+
+.cut-top {
+    margin-top: 0;
+}
+
+.ad {
+    height: 40px;
+    width: 100%;
+    background-color: gray;
+    margin: 40px 0px 40px 0px;
 }

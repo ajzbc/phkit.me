@@ -9,6 +9,11 @@
         generate();
     });
 
+    document.getElementById("exampleButton").addEventListener("click", function () {
+        randomExample();
+        generate();
+    });
+
     async function generate() {
         var url = document.getElementById("postURL").value;
 
@@ -26,6 +31,9 @@
 
                     var sectionBadge = document.getElementById("sectionBadge");
                     sectionBadge.className = "section";
+
+                    var sectionDone = document.getElementById("sectionDone");
+                    sectionDone.className = "section";
 
                     var output = document.getElementById("outputURL");
                     output.value = `https://api.phkit.me/votes/${id}`;
@@ -69,16 +77,16 @@
     }
 
     async function getStars() {
-        var response = await fetch(`https://api.github.com/repos/ajzbc/kanye.rest`);
+        var response = await fetch(`https://api.github.com/repos/ajzbc/phkit.me`);
         var response = await response.json();
         return response.stargazers_count;
     }
 
-    // var phkitUpvotes = await getVotes("146467");
-    // document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
+    var phkitUpvotes = await getVotes("146467");
+    document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
 
-    // var phkitStars = await getStars();
-    // document.getElementById("phkitStars").innerHTML = phkitStars;
+    var phkitStars = await getStars();
+    document.getElementById("phkitStars").innerHTML = phkitStars;
 
 })();
 
@@ -89,4 +97,10 @@ function copy(id) {
     copy.select();
     document.execCommand('copy');
     document.body.removeChild(copy);
+}
+
+function randomExample() {
+    var example = ["https://www.producthunt.com/posts/slack", "https://www.producthunt.com/posts/startup-stash", "https://www.producthunt.com/posts/station-3", "https://www.producthunt.com/posts/f-lux", "https://www.producthunt.com/posts/notion-2-0", "https://www.producthunt.com/posts/sublime-text-3-0", "https://www.producthunt.com/posts/polymail-2", "https://www.producthunt.com/posts/firefox-quantum"];
+    var index = Math.floor(Math.random() * (example.length + 1));
+    document.getElementById("postURL").value = example[index];
 }

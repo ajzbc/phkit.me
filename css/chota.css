@@ -620,11 +620,6 @@ button[disabled]:hover {
   color: var(--color-darkGrey);
 }
 
-.nav a {
-  padding: 0;
-  padding-left: 2.5rem;
-}
-
 .nav .brand {
   padding: 0;
 }

@@ -1,0 +1,9 @@
+I recently created a {silly api} and wanted to showcase it's upvotes on product hunt.
+I really liked the new {embeddable product hunt button}, but it didn't fit the theme of site.
+So, I checked out the product hunt api, but was not interested in authentication.
+To reduce stress on my server, I wanted to fetch the upvote count clientside, so this was not going to work.
+That's why I made this. I simple solution to retreiving a post vote count.
+
+I recently launched a silly api and wanted to showcase its upvotes on product hunt, but the design of the new embeddable button didn't fit in on the site.
+So, I made this; A simple API for retreiving the vote count of your product.
+Without the need for an API key or Auth, it is safe to do clinetside, reducing the stress on your servers.
