@@ -37,8 +37,8 @@ app.get('/votes/:post_id([0-9]+)', function (req, res) {
             incrementAPICalls(post_id);
             return;
         } else {
-            res.status(404).json({
-                error: "404"
+            res.status(404).send({
+                error: "invalid post_id"
             });
             incrementAPICalls();
             return;
@@ -51,8 +51,8 @@ app.get('/getPostID/:name([A-Za-z0-9\-]+)', function (req, res) {
     cheerioReq(`https://www.producthunt.com/posts/${name}/embed`, (err, $) => {
         var imgsrc = $('img').attr('src');
         if (!imgsrc) {
-            res.status(404).json({
-                error: "404"
+            res.status(404).send({
+                error: "invalid post name"
             });
             incrementAPICalls();
             return;
@@ -62,6 +62,10 @@ app.get('/getPostID/:name([A-Za-z0-9\-]+)', function (req, res) {
         incrementAPICalls();
         return;
     });
+});
+
+app.get('/', function (req, res) {
+    res.send("https://phkit.me");
 });
 
 app.listen(process.env.PORT || 3000, function () {
