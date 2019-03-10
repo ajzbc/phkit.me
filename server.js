@@ -34,7 +34,7 @@ app.get('/votes/:post_id([0-9]+)', function (req, res) {
             res.json({
                 votes: tspan
             });
-            incrementAPICalls(post_id);
+            incrementAPICalls();
             return;
         } else {
             res.status(404).send({
@@ -72,25 +72,7 @@ app.listen(process.env.PORT || 3000, function () {
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
-function incrementAPICalls(id) {
-    if (id) {
-        var post_id = id.toString();
-        products.doc(post_id).get()
-            .then(doc => {
-                if (!doc.exists) {
-                    products.doc(post_id).set({
-                        totalCalls: 1
-                    })
-                } else {
-                    products.doc(post_id).set({
-                        totalCalls: doc.data().totalCalls + 1
-                    })
-                }
-            })
-            .catch(err => {
-                console.log('Error getting document', err);
-            });
-    }
+function incrementAPICalls() {
     publicStats.get()
         .then(doc => {
             if (!doc.exists) {
