@@ -12,14 +12,42 @@
     gtag('config', 'UA-134041866-3');
     </script>
 
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PHKIT</title>
+    <meta name="description" content="A simple (unofficial) upvote count API for Product Hunt">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/chota.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/index.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#da552e">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:image" content="/og-image.jpg">
+    <meta property="og:image:width" content="279">
+    <meta property="og:image:height" content="279">
+    <meta property="og:description" content="A simple (unofficial) upvote count API for Product Hunt.">
+    <meta property="og:url" content="https://phkit.me">
+    <meta property="og:title" content="phkit.me">
+
+    <meta name="image" content="https://phkit.me/og-image.jpg">
+
+    <meta itemprop="name" content="phkit.me">
+    <meta itemprop="description" content="A simple (unofficial) upvote count API for Product Hunt">
+    <meta itemprop="image" content="https://phkit.me/og-image.jpg">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="phkit.me">
+    <meta name="twitter:description" content="A simple (unofficial) upvote count API for Product Hunt">
+    <meta name="twitter:site" content="@ajzbc">
+    <meta name="twitter:creator" content="@ajzbc">
+    <meta name="twitter:image" content="https://example.com/og-image.jpg">
 </head>
 
 <body>
@@ -27,19 +55,18 @@
 
         <nav class="nav">
             <div class="nav-left">
-                <a class="brand" href="#"><span class="text-ph">PH</span>KIT</a>
+                <a class="brand" href="#"><span class="text-ph">ph</span>kit</a>
             </div>
             <div class="nav-right">
                 <a href="https://github.com/ajzbc/phkit.me" class="left-stat" target="_blank" rel="noopener noreferrer"
-                    title="Star on GitHub"><img src="https://icongr.am/fontawesome/github-alt.svg?size=24&color=4078c0">&nbsp;<span
+                    title="Star on GitHub"><img src="https://icongr.am/fontawesome/github.svg?size=26&color=4078c0">&nbsp;<span
                         id="phkitStars"></span></a>
-                <a href="" class="right-stat" target="_blank" rel="noopener noreferrer" title="Upvote on Product Hunt"><img
-                        src="https://icongr.am/fontawesome/product-hunt.svg?size=24&color=DA552E">&nbsp;<span id="phkitUpvotes"></span></a>
+                <!-- <a href="" class="right-stat" target="_blank" rel="noopener noreferrer" title="Upvote on Product Hunt"><img
+                        src="https://icongr.am/fontawesome/product-hunt.svg?size=24&color=DA552E">&nbsp;<span id="phkitUpvotes"></span></a> -->
             </div>
         </nav>
 
-        <!-- TODO CHANGE SPACING -->
-        <p class="text-grey">a simple (unofficial) upvote count api for product hunt</p>
+        <p class="text-grey space">a simple (unofficial) upvote count api for product hunt</p>
 
         <div class="section">
             <h3>1️⃣ Enter Product Hunt Post URL</h3>
@@ -56,6 +83,7 @@
                 </div>
             </div>
             <a class="text-ph" id="exampleButton" style="cursor: pointer">Or checkout an example</a>
+            <p id="loading" class="loading is-hidden">Loading...</p>
         </div>
 
         <div class="section is-hidden" id="sectionURL">
@@ -66,7 +94,7 @@
                         readonly>
                 </div>
                 <div class="col-1 hide-phone">
-                    <a onclick='copy("outputURL")'><img src="https://icongr.am/octicons/clippy.svg"></a>
+                    <a onclick='copy("outputURL")' style="cursor: pointer"><img src="https://icongr.am/octicons/clippy.svg"></a>
                 </div>
             </div>
             <pre class="cut-top">{
@@ -83,7 +111,7 @@
 
         </div>
 
-        <div class="section is-hidden" id="sectionBadge">
+        <div class="section is-hidden little-more-space" id="sectionBadge">
             <h3>🛡 Premade badges<span class="hide-phone">&nbsp;with</span><a href="https://shields.io" class="text-blue">&nbsp;shields.io</a></h3>
             <img id="socialBadge">
             <div class="row">
@@ -92,7 +120,7 @@
                         readonly>
                 </div>
                 <div class="col-1 hide-phone">
-                    <a onclick='copy("socialBadgeInput")'><img src="https://icongr.am/octicons/clippy.svg"></a>
+                    <a onclick='copy("socialBadgeInput")' style="cursor: pointer"><img src="https://icongr.am/octicons/clippy.svg"></a>
                 </div>
             </div>
             <img id="githubBadge">
@@ -102,20 +130,20 @@
                         readonly>
                 </div>
                 <div class="col-1 hide-phone">
-                    <a onclick='copy("githubBadgeInput")'><img src="https://icongr.am/octicons/clippy.svg"></a>
+                    <a onclick='copy("githubBadgeInput")' style="cursor: pointer"><img src="https://icongr.am/octicons/clippy.svg"></a>
                 </div>
             </div>
             <a href="https://shields.io/#styles" class="text-blue" target="_blank" rel="noopener noreferrer">More
                 customization</a>
         </div>
 
-        <div class="section">
+        <div class="section little-more-space">
             <h3>🤷‍♀️ Why?</h3>
-            <p>I recently launched a <a href="https://kanye.rest/?ref=phkit" class="text-ph" target="_blank" rel="noopener noreferrer"
+            <p>I recently launched a <a href="https://kanye.rest" class="text-ph" target="_blank" rel="noopener noreferrer"
                     title="kanye.rest">silly
                     api</a>
                 and
-                wanted to showcase its upvotes on product hunt, but the design of
+                wanted to showcase its upvotes on Product Hunt, but the design of
                 the <a href="https://blog.producthunt.com/new-feature-add-a-product-hunt-upvote-badge-to-your-website-150fb4840809"
                     class="text-ph" target="_blank" rel="noopener noreferrer">new embeddable badge</a> didn't fit in on
                 the site. So, I
@@ -123,8 +151,16 @@
                 vote count of your product. Without the need for an API key or Auth, it is safe to do clinetside,
                 reducing the stress on your servers.</p>
         </div>
-
     </div>
+
+    <footer class="footer">
+        <h5>👋 Made by <a href="https://ajzbc.com" class="text-blue" target="_blank" rel="noopener noreferrer">Andrew
+                Jazbec</a> &nbsp;👨‍💻 <a href="https://twitter.com/ajzbc" class="text-blue" target="_blank" rel="noopener noreferrer">@ajzbc</a></h5>
+        <h5>☕️ <a href="https://buymeacoff.ee/ajzbc" class="text-blue" target="_blank" rel="noopener noreferrer">Support</a></h5>
+        <h5>🐛 <a href="https://github.com/ajzbc/phkit.me/issues" class="text-blue" target="_blank" rel="noopener noreferrer">Bugs
+                & Feedback</a></h5>
+    </footer>
+
     <script src="js/index.js"></script>
 </body>
 

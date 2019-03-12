@@ -15,6 +15,10 @@
     });
 
     async function generate() {
+        var loading = document.getElementById("loading");
+        loading.className = "loading";
+
+
         var url = document.getElementById("postURL").value;
 
         if (url.startsWith("https://www.producthunt.com/posts/")) {
@@ -30,10 +34,12 @@
                     sectionURL.className = "section";
 
                     var sectionBadge = document.getElementById("sectionBadge");
-                    sectionBadge.className = "section";
+                    sectionBadge.className = "section little-more-space";
 
                     var sectionDone = document.getElementById("sectionDone");
                     sectionDone.className = "section";
+
+                    loading.className = "loading is-hidden";
 
                     var output = document.getElementById("outputURL");
                     output.value = `https://api.phkit.me/votes/${id}`;
@@ -82,8 +88,8 @@
         return response.stargazers_count;
     }
 
-    var phkitUpvotes = await getVotes("146467");
-    document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
+    // var phkitUpvotes = await getVotes("146467");
+    // document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
 
     var phkitStars = await getStars();
     document.getElementById("phkitStars").innerHTML = phkitStars;
@@ -101,6 +107,8 @@ function copy(id) {
 
 function randomExample() {
     var example = ["https://www.producthunt.com/posts/slack", "https://www.producthunt.com/posts/startup-stash", "https://www.producthunt.com/posts/station-3", "https://www.producthunt.com/posts/f-lux", "https://www.producthunt.com/posts/notion-2-0", "https://www.producthunt.com/posts/sublime-text-3-0", "https://www.producthunt.com/posts/polymail-2", "https://www.producthunt.com/posts/firefox-quantum"];
-    var index = Math.floor(Math.random() * (example.length + 1));
+    var index = Math.floor(Math.random() * (example.length));
+    console.log(example.length);
+    console.log(index);
     document.getElementById("postURL").value = example[index];
 }

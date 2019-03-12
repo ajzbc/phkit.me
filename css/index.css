@@ -1,16 +1,17 @@
 html {
     overflow-x: hidden;
     margin-right: calc(-1 * (100vw - 100%));
+    padding: 10px;
 }
 
 .wrapper {
     max-width: 650px;
     margin: 0 auto;
-    padding: 10px;
+    min-height: calc(100vh - 140px);
 }
 
 .nav {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .brand {
@@ -25,8 +26,28 @@ html {
     margin-left: 1rem;
 }
 
+.space {
+    margin-bottom: 2.5rem;
+}
+
+.little-more-space {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
 .cut-top {
     margin-top: 0;
+}
+
+.loading {
+    margin-top: 2rem;
+    width: 100%;
+    background-color: #F3F3F6;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 .ad {
@@ -34,4 +55,10 @@ html {
     width: 100%;
     background-color: gray;
     margin: 40px 0px 40px 0px;
+}
+
+.footer {
+    height: 100px;
+    max-width: 650px;
+    margin: 0 auto;
 }
