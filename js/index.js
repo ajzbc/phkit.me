@@ -88,8 +88,8 @@
         return response.stargazers_count;
     }
 
-    // var phkitUpvotes = await getVotes("146467");
-    // document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
+    var phkitUpvotes = await getVotes("148110");
+    document.getElementById("phkitUpvotes").innerHTML = phkitUpvotes.votes;
 
     var phkitStars = await getStars();
     document.getElementById("phkitStars").innerHTML = phkitStars;
