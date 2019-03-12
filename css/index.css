@@ -7,7 +7,7 @@ html {
 .wrapper {
     max-width: 650px;
     margin: 0 auto;
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - 200px);
 }
 
 .nav {
@@ -50,12 +50,12 @@ html {
     font-weight: 600;
 }
 
-.ad {
+/* .ad {
     height: 40px;
     width: 100%;
     background-color: gray;
     margin: 40px 0px 40px 0px;
-}
+} */
 
 .footer {
     height: 100px;

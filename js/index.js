@@ -108,7 +108,5 @@ function copy(id) {
 function randomExample() {
     var example = ["https://www.producthunt.com/posts/slack", "https://www.producthunt.com/posts/startup-stash", "https://www.producthunt.com/posts/station-3", "https://www.producthunt.com/posts/f-lux", "https://www.producthunt.com/posts/notion-2-0", "https://www.producthunt.com/posts/sublime-text-3-0", "https://www.producthunt.com/posts/polymail-2", "https://www.producthunt.com/posts/firefox-quantum"];
     var index = Math.floor(Math.random() * (example.length));
-    console.log(example.length);
-    console.log(index);
     document.getElementById("postURL").value = example[index];
 }
