@@ -42,7 +42,7 @@ html {
 .loading {
     margin-top: 2rem;
     width: 100%;
-    background-color: #F3F3F6;
+    background-color: #F8F8F8;
     padding: 10px;
     border-radius: 4px;
     text-align: center;
@@ -50,12 +50,11 @@ html {
     font-weight: 600;
 }
 
-/* .ad {
-    height: 40px;
-    width: 100%;
-    background-color: gray;
-    margin: 40px 0px 40px 0px;
-} */
+.ad {
+    padding: 1px;
+    background-color: #F8F8F8;
+    border-radius: 4px;
+}
 
 .footer {
     height: 100px;
